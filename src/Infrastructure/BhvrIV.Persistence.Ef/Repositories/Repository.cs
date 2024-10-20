@@ -127,4 +127,9 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityBa
     }
 
     #endregion
+
+    public Task<IEnumerable<TEntity>> ExecuteStoredProcedure(string storedProcedureName, object parameters = null)
+    {
+        throw new NotImplementedException();
+    }
 }

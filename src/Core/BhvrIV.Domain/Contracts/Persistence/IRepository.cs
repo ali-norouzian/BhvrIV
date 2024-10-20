@@ -29,4 +29,7 @@ public interface IRepository<TEntity> where TEntity : EntityBase
 
     Task<int> Count(Expression<Func<TEntity, bool>>? where = null,
         List<Expression<Func<TEntity, object>>>? includes = null);
+
+    Task<IEnumerable<TEntity>> ExecuteStoredProcedure(string storedProcedureName, object parameters = null);
+
 }
