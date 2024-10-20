@@ -1,4 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using BhvrIV.Domain.Contracts.Persistence;
+using BhvrIV.Persistence.Sql.Repositories;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data;
@@ -13,10 +15,10 @@ public static class PersistenceSqlConfigs
         var configuration = serviceProvider.GetService<IConfiguration>();
 
         services.AddScoped<IDbConnection>(sp =>
-                 new SqlConnection(configuration.GetConnectionString("DefaultConnection")));
+                 new SqlConnection(configuration.GetConnectionString("SqlServer")));
         //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-        //services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }

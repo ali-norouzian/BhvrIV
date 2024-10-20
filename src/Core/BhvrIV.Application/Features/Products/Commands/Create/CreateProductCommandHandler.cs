@@ -23,9 +23,10 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
         var repo = _unitOfWork.GetRepository<Products>();
 
         var product = _mapper.Map<Products>(request);
-        await repo.Add(product);
+        //await repo.Add(product);
+        await repo.ExecuteStoredProcedure("sp_AddNewProduct", request);
 
-        await _unitOfWork.SaveChanges();
+        //await _unitOfWork.SaveChanges();
 
         return new CreateProductCommandResult(product.Id);
     }

@@ -1,9 +1,8 @@
 ﻿using BhvrIV.Domain.Contracts.Persistence;
 using BhvrIV.Domain.Entities.Common;
-using BhvrIV.Persistence.Sql.Repositories;
 using System.Data;
 
-namespace BhvrIV.Persistence.Ef.Repositories;
+namespace BhvrIV.Persistence.Sql.Repositories;
 
 public class UnitOfWork : IUnitOfWork
 {
@@ -16,7 +15,8 @@ public class UnitOfWork : IUnitOfWork
     {
         _dbConnection = dbConnection;
         _dbConnection.Open();
-        _dbTransaction = _dbConnection.BeginTransaction();
+        // Todo: it was not work
+        //_dbTransaction = _dbConnection.BeginTransaction();
         _repositories = new Dictionary<Type, object>();
     }
 

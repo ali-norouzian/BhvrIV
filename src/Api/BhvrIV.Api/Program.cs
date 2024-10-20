@@ -1,7 +1,6 @@
 
 using BhvrIV.Application;
 using BhvrIV.Persistence.Ef;
-using Microsoft.EntityFrameworkCore;
 
 namespace BhvrIV.Api;
 
@@ -12,7 +11,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        builder.Services.AddPersistenceEf()
+        builder.Services.AddPersistenceSql()
                         .AddApplication();
 
         builder.Services.AddControllers();
@@ -22,12 +21,12 @@ public class Program
 
         var app = builder.Build();
 
-        await using (var scope = app.Services.CreateAsyncScope())
-        {
-            var dbContext = scope.ServiceProvider.GetService<AppWriteDbContext>() ??
-                           throw new Exception("Database Context Not Found");
-            dbContext.Database.MigrateAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-        }
+        //await using (var scope = app.Services.CreateAsyncScope())
+        //{
+        //    var dbContext = scope.ServiceProvider.GetService<AppWriteDbContext>() ??
+        //                   throw new Exception("Database Context Not Found");
+        //    dbContext.Database.MigrateAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+        //}
 
         // Configure the HTTP request pipeline.
         app.UseSwagger();

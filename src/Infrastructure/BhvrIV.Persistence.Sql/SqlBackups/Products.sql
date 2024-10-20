@@ -5,7 +5,7 @@
 AS
 BEGIN
 
-INSERT INTO Products (Name, Price, StockQuantity)
+INSERT INTO InventoryManagement.Products (Name, Price, StockQuantity)
 VALUES (@Name, @Price, @StockQuantity);
 
 END;
