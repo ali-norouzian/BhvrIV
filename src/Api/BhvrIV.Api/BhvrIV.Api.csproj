@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -16,10 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\Core\BhvrIV.Application\BhvrIV.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\BhvrIV.Persistence.Ef\BhvrIV.Persistence.Ef.csproj" />
   </ItemGroup>
 

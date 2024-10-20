@@ -15,7 +15,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityBa
     public Repository(AppDbContext dbContext, bool onlyRead)
     {
         _dbContext = dbContext;
-        Table = _dbContext.Set<TEntity>();
+        Entity = _dbContext.Set<TEntity>();
         Table = onlyRead ? Table.AsNoTrackingWithIdentityResolution() : Table;
     }
 
