@@ -15,8 +15,8 @@ namespace BhvrIV.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddNewProductAsync(CreateProductCommand command)
+        [HttpPost("product")]
+        public async Task<IActionResult> AddNewProduct(CreateProductCommand command)
         {
             var result = await _mediator.Send(command);
 
