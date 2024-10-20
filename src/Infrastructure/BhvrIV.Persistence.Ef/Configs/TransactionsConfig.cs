@@ -9,6 +9,7 @@ public class TransactionsConfig : IEntityTypeConfiguration<Transactions>
 {
     public void Configure(EntityTypeBuilder<Transactions> builder)
     {
+        builder.ToTable(nameof(Transactions), "InventoryManagement");
         builder.Property(e => e.TransactionType).HasMaxLength(50).IsRequired()
             .HasConversion(
                 v => v.ToString(),

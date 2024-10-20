@@ -8,6 +8,7 @@ public class ProductsConfig : IEntityTypeConfiguration<Products>
 {
     public void Configure(EntityTypeBuilder<Products> builder)
     {
+        builder.ToTable(nameof(Products), "InventoryManagement");
         builder.Property(e => e.Name).HasMaxLength(100).IsRequired();
         builder.Property(e => e.Price).HasColumnType("decimal(10,2)");
     }

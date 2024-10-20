@@ -1,4 +1,6 @@
 
+using BhvrIV.Persistence.Ef;
+
 namespace BhvrIV.Api;
 
 public class Program
@@ -8,6 +10,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddPersistenceEf();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

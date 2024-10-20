@@ -4,7 +4,7 @@ namespace BhvrIV.Persistence.Ef;
 
 public class AppWriteDbContext : AppDbContext
 {
-    public AppWriteDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    public AppWriteDbContext(DbContextOptions options) : base(options)
     {
     }
 }
