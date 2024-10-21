@@ -10,3 +10,17 @@ INSERT INTO InventoryManagement.Transactions (ProductId, WarehouseId, Transactio
 VALUES (@ProductId, @WarehouseId, @TransactionType, @Quantity);
 
 END;
+
+
+CREATE PROCEDURE [dbo].[sp_GetProductStockInWarehouse]
+    @ProductId INT,
+    @WarehouseId INT
+AS
+BEGIN
+
+SELECT P.StockQuantity
+FROM InventoryManagement.Transactions AS T
+INNER JOIN InventoryManagement.Products AS P ON T.ProductId = P.Id
+WHERE T.ProductId = @ProductId AND T.WarehouseId = @WarehouseId
+
+END;
