@@ -1,3 +1,3 @@
-﻿namespace BhvrIV.Application.Features.Product.Commands.Create;
+﻿namespace BhvrIV.Application.Features.Transaction.Create;
 
 public record CreateTransactionCommandResult(int Id);
