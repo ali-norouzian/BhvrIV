@@ -3,7 +3,7 @@ using BhvrIV.Domain.Contracts.Persistence;
 using BhvrIV.Domain.Entities;
 using Mediator;
 
-namespace BhvrIV.Application.Features.Transaction.Create;
+namespace BhvrIV.Application.Features.Transaction.Commands.Create;
 
 public class CreateTransactionCommandHandler : IRequestHandler<CreateTransactionCommand, CreateTransactionCommandResult>
 {

@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace BhvrIV.Application.Features.Transaction.Create;
+namespace BhvrIV.Application.Features.Transaction.Commands.Create;
 
 public record CreateTransactionCommand(
     int ProductId,
