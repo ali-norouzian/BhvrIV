@@ -3,7 +3,7 @@ using BhvrIV.Domain.Contracts.Persistence;
 using BhvrIV.Domain.Entities;
 using Mediator;
 
-namespace BhvrIV.Application.Features.Transaction.Queries;
+namespace BhvrIV.Application.Features.Transaction.Queries.GetProductStockInWarehouse;
 
 public class GetProductStockInWarehouseQueryHandler : IRequestHandler<GetProductStockInWarehouseQuery, GetProductStockInWarehouseQueryResult>
 {

@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace BhvrIV.Application.Features.Transaction.Queries;
+namespace BhvrIV.Application.Features.Transaction.Queries.GetProductStockInWarehouse;
 
 public record GetProductStockInWarehouseQuery(
     int ProductId,
