@@ -7,6 +7,7 @@ BEGIN
 
 INSERT INTO InventoryManagement.Products (Name, Price, StockQuantity)
 VALUES (@Name, @Price, @StockQuantity);
+SELECT SCOPE_IDENTITY() AS Id;
 
 END;
 GO
