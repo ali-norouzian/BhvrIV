@@ -25,7 +25,7 @@ public class GetTransactionsByTypeQueryHandler : IRequestHandler<GetTransactions
         //var transactions = _mapper.Map<Transactions>(request);
 
         // For ef core: 
-        //await repo.Add(transactions);
+        //var efResult = await repo.List(e => e.TransactionType == (TransactionType)Enum.Parse(typeof(TransactionType), request.TransactionType));
         //await _unitOfWork.SaveChanges();
 
         // For sp sql:

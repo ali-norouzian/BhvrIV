@@ -20,12 +20,18 @@ public class GetProductStockInWarehouseQueryHandler : IRequestHandler<GetProduct
         GetProductStockInWarehouseQuery request,
         CancellationToken cancellationToken)
     {
+        // For sp
         var repo = _unitOfWork.GetRepository<Products>();
+        // For ef
+        //var repo = _unitOfWork.GetRepository<Transactions>();
 
         //var transactions = _mapper.Map<Transactions>(request);
 
         // For ef core: 
-        //await repo.Add(transactions);
+        //var productStock = (await repo.First(
+        //    e => e.ProductId == request.ProductId && e.WarehouseId == request.WarehouseId,
+        //    new List<System.Linq.Expressions.Expression<Func<Transactions, object>>> { e => e.Product }))
+        //    .Product.StockQuantity;
         //await _unitOfWork.SaveChanges();
 
         // For sp sql:
