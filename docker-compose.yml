@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  bhvriv.api:
+    container_name: bhvriv.api
+    build:
+      context: .
+      dockerfile: src/Api/BhvrIV.Api/Dockerfile
+    ports:
+      - "8000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    restart: on-failure
+    depends_on: 
+      - bhvriv.db
+  bhvriv.db:
+    image: mcr.microsoft.com/mssql/server:2022-CU14-ubuntu-22.04
+    container_name: bhvriv.db
+    restart: on-failure
+    ports:
+      - "8001:1433"
+    volumes:
+      - mssqls_data:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=1234@Abcd
+      - MSSQL_PID=Developer
+volumes:
+  mssqls_data:
