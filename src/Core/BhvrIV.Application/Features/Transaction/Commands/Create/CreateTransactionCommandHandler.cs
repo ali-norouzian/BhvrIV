@@ -29,8 +29,8 @@ public class CreateTransactionCommandHandler : IRequestHandler<CreateTransaction
         //await _unitOfWork.SaveChanges();
 
         // For sp sql:
-        await repo.ExecuteStoredProcedure("sp_AddNewTransaction", request);
+        var insertedId = (await repo.ExecuteStoredProcedure("sp_AddNewTransaction", request)).FirstOrDefault().Id;
 
-        return new CreateTransactionCommandResult(0);
+        return new CreateTransactionCommandResult(insertedId);
     }
 }
