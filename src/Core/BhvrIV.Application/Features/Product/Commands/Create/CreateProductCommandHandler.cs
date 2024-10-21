@@ -3,7 +3,7 @@ using BhvrIV.Domain.Contracts.Persistence;
 using BhvrIV.Domain.Entities;
 using Mediator;
 
-namespace Codal.Application.Features.BasicInfo.Services.Commands.Create;
+namespace BhvrIV.Application.Features.Product.Commands.Create;
 
 public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductCommandResult>
 {

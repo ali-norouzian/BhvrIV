@@ -1,6 +1,6 @@
 using Mediator;
 
-namespace Codal.Application.Features.BasicInfo.Services.Commands.Create;
+namespace BhvrIV.Application.Features.Product.Commands.Create;
 
 public record CreateProductCommand(
     string Name,

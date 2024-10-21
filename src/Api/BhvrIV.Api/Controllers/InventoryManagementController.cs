@@ -1,4 +1,4 @@
-﻿using Codal.Application.Features.BasicInfo.Services.Commands.Create;
+﻿using BhvrIV.Application.Features.Product.Commands.Create;
 using Mediator;
 using Microsoft.AspNetCore.Mvc;
 

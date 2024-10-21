@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using BhvrIV.Application.Features.Product.Commands.Create;
 using BhvrIV.Domain.Entities;
-using Codal.Application.Features.BasicInfo.Services.Commands.Create;
 
 namespace BhvrIV.Application.Mappers;
 public class AutoMapperProfile : Profile
