@@ -18,8 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Warehouses\" />
-    <Folder Include="Features\Transactions\" />
+    <Folder Include="Features\Warehouse\" />
     <Folder Include="Common\" />
   </ItemGroup>
 
