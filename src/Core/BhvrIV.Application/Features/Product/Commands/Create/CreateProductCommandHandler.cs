@@ -22,15 +22,15 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
     {
         var repo = _unitOfWork.GetRepository<Products>();
 
-        var product = _mapper.Map<Products>(request);
+        //var product = _mapper.Map<Products>(request);
 
         // For ef core: 
         //await repo.Add(product);
         //await _unitOfWork.SaveChanges();
 
         // For sp sql:
-        await repo.ExecuteStoredProcedure("sp_AddNewProduct", request);
+        var insertedId = (await repo.ExecuteStoredProcedure("sp_AddNewProduct", request)).FirstOrDefault().Id;
 
-        return new CreateProductCommandResult(product.Id);
+        return new CreateProductCommandResult(insertedId);
     }
 }
