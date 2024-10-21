@@ -1,4 +1,3 @@
-
 using BhvrIV.Application;
 using BhvrIV.Persistence.Ef;
 
@@ -10,9 +9,11 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
-        builder.Services.AddPersistenceSql()
-                        .AddApplication();
+        // For ef core:
+        //builder.Services.AddPersistenceEf();
+        // For sp sql:
+        builder.Services.AddPersistenceSql();
+        builder.Services.AddApplication();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -21,14 +22,9 @@ public class Program
 
         var app = builder.Build();
 
-        //await using (var scope = app.Services.CreateAsyncScope())
-        //{
-        //    var dbContext = scope.ServiceProvider.GetService<AppWriteDbContext>() ??
-        //                   throw new Exception("Database Context Not Found");
-        //    dbContext.Database.MigrateAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-        //}
+        // For ef core:
+        //await app.UpdateEfDb();
 
-        // Configure the HTTP request pipeline.
         app.UseSwagger();
         app.UseSwaggerUI();
 
